@@ -1,0 +1,1098 @@
+/* =========================================================
+   RAW STEEL page content - scoped under .hc-raw-steel only
+   Does not style site header/footer (theme owns those).
+   Elementor: Page Layout = Elementor Full Width; section =
+   Full Width + Stretch; paste this block in an HTML widget.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Rubik:wght@400;500;600;700&display=swap');
+
+/* ---------- Elementor full-width + kill white gaps ----------
+   Zero Elementor/theme chrome so no white lines show above,
+   below, or beside the full-bleed hero/sections. */
+/* Local preview + theme: kill default body/html chrome (white edges) */
+html:has(.hc-raw-steel),
+body:has(.hc-raw-steel) {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  border: 0 !important;
+}
+
+/* Theme / WP content shells */
+body:has(.hc-raw-steel) .site-content,
+body:has(.hc-raw-steel) .site-main,
+body:has(.hc-raw-steel) #content,
+body:has(.hc-raw-steel) #primary,
+body:has(.hc-raw-steel) .content-area,
+body:has(.hc-raw-steel) .page-content,
+body:has(.hc-raw-steel) .entry-content,
+body:has(.hc-raw-steel) article.page,
+body:has(.hc-raw-steel) .elementor {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Elementor section / container / column / widget around us */
+.elementor-section:has(.hc-raw-steel),
+.elementor-top-section:has(.hc-raw-steel),
+.elementor-inner-section:has(.hc-raw-steel),
+.e-con:has(.hc-raw-steel),
+.e-con-full:has(.hc-raw-steel),
+.e-con-boxed:has(.hc-raw-steel),
+.e-con-inner:has(.hc-raw-steel),
+.elementor-container:has(.hc-raw-steel),
+.elementor-column:has(.hc-raw-steel),
+.elementor-column-wrap:has(.hc-raw-steel),
+.elementor-widget-wrap:has(.hc-raw-steel),
+.elementor-widget:has(.hc-raw-steel),
+.elementor-widget-html:has(.hc-raw-steel),
+.elementor-element:has(.hc-raw-steel) {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  margin-block: 0 !important;
+  margin-inline: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  border-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+.elementor-widget:has(.hc-raw-steel) > .elementor-widget-container,
+.elementor-widget-html:has(.hc-raw-steel) > .elementor-widget-container,
+.elementor-column:has(.hc-raw-steel) > .elementor-widget-wrap,
+.elementor-column:has(.hc-raw-steel) > .elementor-column-wrap {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+/* Elementor default widget spacing (theme kit often sets 20px) */
+.elementor-widget:has(.hc-raw-steel):not(:last-child),
+.elementor-element:has(.hc-raw-steel) {
+  margin-block-end: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.hc-raw-steel {
+  --hc-blue: #0C60C4;
+  --hc-blue-dark: #085fc3;
+  --hc-green: #3BAE49;
+  --hc-green-hover: #266D24;
+  --hc-gold: #d9c10f;
+  --hc-dark: #1D1D1D;
+  --hc-white: #ffffff;
+  --hc-section: #F3F7FA;
+  --hc-text: #222222;
+  --hc-body: #555555;
+  --hc-heading: 'Rubik', 'Roboto', sans-serif;
+  --hc-font: 'Roboto', sans-serif;
+  --hc-max: 1400px;
+  --hc-ease: all 0.3s ease;
+
+  font-family: var(--hc-font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--hc-text);
+  /* transparent shell so no white flash/lines around full-bleed sections */
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+  display: block;
+  /* Full bleed without 100vw scrollbar gap (that causes thin white side lines) */
+  width: 100%;
+  max-width: none;
+  position: relative;
+  left: auto;
+  right: auto;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+}
+
+/* If parent is still boxed, break out safely */
+@supports (width: 100vw) {
+  .elementor-section-boxed .hc-raw-steel,
+  .e-con-boxed > .e-con-inner .hc-raw-steel,
+  .elementor-column .hc-raw-steel {
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+.hc-raw-steel *,
+.hc-raw-steel *::before,
+.hc-raw-steel *::after {
+  box-sizing: border-box;
+}
+
+.hc-raw-steel img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hc-raw-steel a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--hc-ease);
+}
+
+.hc-raw-steel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hc-raw-steel h1,
+.hc-raw-steel h2,
+.hc-raw-steel h3,
+.hc-raw-steel p {
+  margin: 0;
+}
+
+.hc-raw-steel .hc-rs-container {
+  max-width: var(--hc-max);
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Full-bleed section shells (backgrounds go edge-to-edge) */
+.hc-raw-steel .hc-rs-hero,
+.hc-raw-steel .hc-rs-products-section,
+.hc-raw-steel .hc-rs-order,
+.hc-raw-steel .hc-rs-cta {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+/* ---------- Buttons ---------- */
+.hc-raw-steel .hc-rs-btn {
+  display: inline-block;
+  font-family: var(--hc-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: var(--hc-ease);
+  text-align: center;
+}
+
+.hc-raw-steel .hc-rs-btn-primary {
+  background: var(--hc-blue);
+  color: var(--hc-white);
+  padding: 16px 40px;
+  font-size: 18px;
+}
+
+.hc-raw-steel .hc-rs-btn-primary:hover {
+  background: var(--hc-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: var(--hc-white);
+}
+
+.hc-raw-steel .hc-rs-btn-dark {
+  background: #000;
+  color: var(--hc-white);
+  padding: 14px 35px;
+  font-size: 16px;
+  border: 2px solid var(--hc-white);
+}
+
+.hc-raw-steel .hc-rs-btn-dark:hover {
+  background: var(--hc-white);
+  color: #000;
+}
+
+/* ---------- Hero ---------- */
+.hc-raw-steel .hc-rs-hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 !important;
+  padding: 0;
+  border: 0 !important;
+  background-color: #0a0a0a; /* underlay so no white shows while image loads */
+}
+
+.hc-raw-steel .hc-rs-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('img/rawl-steel/i-beams.jpg') center / cover no-repeat;
+  background-color: #0a0a0a;
+  z-index: 0;
+}
+
+.hc-raw-steel .hc-rs-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.55) 55%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+.hc-raw-steel .hc-rs-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  padding: 70px 0;
+}
+
+.hc-raw-steel .hc-rs-hero-content {
+  max-width: 100%;
+  padding: 0;
+}
+
+.hc-raw-steel .hc-rs-hero-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hc-raw-steel .hc-rs-hero-graphic img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  border: 3px solid rgba(255, 255, 255, 0.12);
+}
+
+.hc-raw-steel .hc-rs-eyebrow {
+  display: inline-block;
+  font-family: var(--hc-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #0C60C4;
+  margin-bottom: 14px;
+}
+
+.hc-raw-steel .hc-rs-hero-content h1 {
+  font-family: var(--hc-heading);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--hc-white);
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hc-raw-steel .hc-rs-hero-content h1 span {
+  color: #0C60C4;
+}
+
+.hc-raw-steel .hc-rs-tagline {
+  font-family: var(--hc-heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--hc-white);
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.hc-raw-steel .hc-rs-lead {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  max-width: 560px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hc-raw-steel .hc-rs-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 28px;
+}
+
+.hc-raw-steel .hc-rs-products span {
+  font-family: var(--hc-heading);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--hc-white);
+  background: rgba(10, 96, 196, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 14px;
+  border-radius: 2px;
+}
+
+.hc-raw-steel .hc-rs-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.hc-raw-steel .hc-rs-phone {
+  font-family: var(--hc-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--hc-white);
+}
+
+.hc-raw-steel .hc-rs-phone a {
+  color: #0C60C4;
+}
+
+.hc-raw-steel .hc-rs-phone a:hover {
+  color: var(--hc-white);
+}
+
+/* ---------- Product cards ---------- */
+.hc-raw-steel .hc-rs-products-section {
+  padding: 80px 0;
+  background: var(--hc-section);
+}
+
+.hc-raw-steel .hc-rs-section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.hc-raw-steel .hc-rs-section-header h2 {
+  font-family: var(--hc-heading);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--hc-text);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.hc-raw-steel .hc-rs-section-header h2 span {
+  color: var(--hc-blue);
+}
+
+.hc-raw-steel .hc-rs-section-header p {
+  font-size: 18px;
+  color: var(--hc-body);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hc-raw-steel .hc-rs-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.hc-raw-steel .hc-rs-card {
+  background: var(--hc-white);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  transition: var(--hc-ease);
+  display: flex;
+  flex-direction: column;
+}
+
+.hc-raw-steel .hc-rs-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+.hc-raw-steel .hc-rs-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.hc-raw-steel .hc-rs-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hc-raw-steel .hc-rs-card:hover .hc-rs-card-image img {
+  transform: scale(1.05);
+}
+
+.hc-raw-steel .hc-rs-card-body {
+  padding: 22px 20px 26px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hc-raw-steel .hc-rs-card-body h3 {
+  font-family: var(--hc-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--hc-text);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hc-raw-steel .hc-rs-card-body p {
+  font-size: 15px;
+  color: var(--hc-body);
+  line-height: 1.55;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.hc-raw-steel .hc-rs-card-link {
+  font-family: var(--hc-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--hc-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.hc-raw-steel .hc-rs-card-link:hover {
+  color: var(--hc-green);
+}
+
+/* ---------- Order + form ---------- */
+.hc-raw-steel .hc-rs-order {
+  padding: 80px 0;
+  background: var(--hc-white);
+}
+
+.hc-raw-steel .hc-rs-order-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.hc-raw-steel .hc-rs-order-copy h2 {
+  font-family: var(--hc-heading);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--hc-text);
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.hc-raw-steel .hc-rs-order-copy h2 span {
+  color: var(--hc-blue);
+}
+
+.hc-raw-steel .hc-rs-order-copy > p {
+  font-size: 17px;
+  color: var(--hc-body);
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.hc-raw-steel .hc-rs-order-graphic {
+  margin: 0 0 24px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e0e8ef;
+  max-width: 420px;
+}
+
+.hc-raw-steel .hc-rs-order-graphic img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 360px;
+  object-position: top center;
+}
+
+.hc-raw-steel .hc-rs-features {
+  margin-bottom: 28px;
+}
+
+.hc-raw-steel .hc-rs-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--hc-text);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.hc-raw-steel .hc-rs-features li:last-child {
+  border-bottom: none;
+}
+
+.hc-raw-steel .hc-rs-check {
+  width: 26px;
+  height: 26px;
+  background: var(--hc-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.hc-raw-steel .hc-rs-check i {
+  color: var(--hc-white);
+  font-size: 12px;
+}
+
+.hc-raw-steel .hc-rs-phone-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.hc-raw-steel .hc-rs-phone-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--hc-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hc-white);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.hc-raw-steel .hc-rs-phone-text span {
+  display: block;
+  font-size: 13px;
+  color: var(--hc-body);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.hc-raw-steel .hc-rs-phone-text a {
+  font-family: var(--hc-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--hc-text);
+}
+
+.hc-raw-steel .hc-rs-phone-text a:hover {
+  color: var(--hc-blue);
+}
+
+.hc-raw-steel .hc-rs-form-card {
+  background: var(--hc-section);
+  border: 1px solid #e0e8ef;
+  border-radius: 6px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.hc-raw-steel .hc-rs-form-card h3 {
+  font-family: var(--hc-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--hc-text);
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.hc-raw-steel .hc-rs-form-sub {
+  text-align: center;
+  font-size: 14px;
+  color: var(--hc-body);
+  margin-bottom: 24px;
+}
+
+.hc-raw-steel .hc-rs-field {
+  margin-bottom: 16px;
+}
+
+.hc-raw-steel .hc-rs-field label {
+  display: block;
+  font-family: var(--hc-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hc-text);
+  margin-bottom: 6px;
+}
+
+.hc-raw-steel .hc-rs-req {
+  color: #c0392b;
+}
+
+.hc-raw-steel .hc-rs-field input,
+.hc-raw-steel .hc-rs-field textarea {
+  width: 100%;
+  max-width: 100%;
+  font-family: var(--hc-font);
+  font-size: 16px; /* prevents iOS zoom */
+  color: var(--hc-text);
+  background: var(--hc-white);
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  padding: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.hc-raw-steel .hc-rs-field input:focus,
+.hc-raw-steel .hc-rs-field textarea:focus {
+  border-color: var(--hc-blue);
+  box-shadow: 0 0 0 3px rgba(10, 96, 196, 0.15);
+}
+
+.hc-raw-steel .hc-rs-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.hc-raw-steel .hc-rs-btn-submit {
+  width: 100%;
+  margin-top: 8px;
+  padding: 16px 24px;
+  min-height: 52px;
+  font-size: 16px;
+  background: var(--hc-green);
+  color: var(--hc-white);
+  border: none;
+  border-radius: 4px;
+  font-family: var(--hc-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--hc-ease);
+}
+
+.hc-raw-steel .hc-rs-btn-submit:hover {
+  background: var(--hc-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+}
+
+.hc-raw-steel .hc-rs-form-note {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--hc-body);
+  text-align: center;
+}
+
+.hc-raw-steel .hc-rs-form-note a {
+  color: var(--hc-blue);
+  text-decoration: underline;
+}
+
+/* ---------- CTA bar ---------- */
+.hc-raw-steel .hc-rs-cta {
+  background: var(--hc-blue);
+  padding: 45px 0;
+}
+
+.hc-raw-steel .hc-rs-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.hc-raw-steel .hc-rs-cta-text h2 {
+  font-family: var(--hc-heading);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--hc-white);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.hc-raw-steel .hc-rs-cta-text p {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--hc-white);
+  max-width: 600px;
+}
+
+.hc-raw-steel .hc-rs-cta-action {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .hc-raw-steel .hc-rs-container {
+    padding: 0 24px;
+  }
+
+  .hc-raw-steel .hc-rs-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hc-raw-steel .hc-rs-product-grid {
+    gap: 18px;
+  }
+
+  .hc-raw-steel .hc-rs-card-body h3 {
+    font-size: 18px;
+  }
+
+  .hc-raw-steel .hc-rs-card-body p {
+    font-size: 14px;
+  }
+
+  .hc-raw-steel .hc-rs-order-grid {
+    gap: 36px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hc-raw-steel .hc-rs-product-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .hc-raw-steel .hc-rs-order-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hc-raw-steel .hc-rs-hero {
+    min-height: 0;
+  }
+
+  .hc-raw-steel .hc-rs-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 48px 0 40px;
+    text-align: left;
+  }
+
+  .hc-raw-steel .hc-rs-hero-graphic {
+    order: -1; /* graphic first on tablet/phone for impact */
+  }
+
+  .hc-raw-steel .hc-rs-hero-graphic img {
+    max-width: 360px;
+  }
+
+  .hc-raw-steel .hc-rs-hero-content {
+    max-width: 100%;
+  }
+
+  .hc-raw-steel .hc-rs-hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hc-raw-steel .hc-rs-order-graphic {
+    max-width: 100%;
+  }
+
+  .hc-raw-steel .hc-rs-order-graphic img {
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hc-raw-steel .hc-rs-hero {
+    min-height: 0;
+    align-items: flex-end;
+  }
+
+  .hc-raw-steel .hc-rs-hero-bg::after {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.82) 100%
+    );
+  }
+
+  .hc-raw-steel .hc-rs-hero-grid {
+    padding: 36px 0 32px;
+    gap: 22px;
+  }
+
+  .hc-raw-steel .hc-rs-hero-content {
+    max-width: 100%;
+  }
+
+  .hc-raw-steel .hc-rs-hero-graphic img {
+    max-width: 300px;
+  }
+
+  .hc-raw-steel .hc-rs-eyebrow {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+  }
+
+  .hc-raw-steel .hc-rs-hero-content h1 {
+    font-size: clamp(28px, 8vw, 34px);
+    margin-bottom: 10px;
+  }
+
+  .hc-raw-steel .hc-rs-tagline {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+
+  .hc-raw-steel .hc-rs-lead {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .hc-raw-steel .hc-rs-products {
+    gap: 8px;
+    margin: 16px 0 22px;
+  }
+
+  .hc-raw-steel .hc-rs-products span {
+    font-size: 11px;
+    padding: 7px 11px;
+  }
+
+  .hc-raw-steel .hc-rs-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hc-raw-steel .hc-rs-hero-actions .hc-rs-btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 15px 24px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+
+  .hc-raw-steel .hc-rs-phone {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .hc-raw-steel .hc-rs-products-section,
+  .hc-raw-steel .hc-rs-order {
+    padding: 52px 0;
+  }
+
+  .hc-raw-steel .hc-rs-section-header {
+    margin-bottom: 28px;
+  }
+
+  .hc-raw-steel .hc-rs-section-header h2 {
+    font-size: clamp(24px, 6.5vw, 28px);
+  }
+
+  .hc-raw-steel .hc-rs-section-header p {
+    font-size: 15px;
+  }
+
+  .hc-raw-steel .hc-rs-product-grid {
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .hc-raw-steel .hc-rs-card-body {
+    padding: 18px 16px 22px;
+  }
+
+  .hc-raw-steel .hc-rs-card-body h3 {
+    font-size: 20px;
+  }
+
+  .hc-raw-steel .hc-rs-card-link {
+    display: inline-block;
+    padding: 8px 0;
+    min-height: 44px;
+  }
+
+  .hc-raw-steel .hc-rs-order-copy h2 {
+    font-size: clamp(24px, 6.5vw, 28px);
+  }
+
+  .hc-raw-steel .hc-rs-order-copy > p {
+    font-size: 15px;
+  }
+
+  .hc-raw-steel .hc-rs-features li {
+    font-size: 15px;
+    padding: 12px 0;
+  }
+
+  .hc-raw-steel .hc-rs-phone-text a {
+    font-size: 22px;
+  }
+
+  .hc-raw-steel .hc-rs-form-card {
+    padding: 24px 18px;
+  }
+
+  .hc-raw-steel .hc-rs-form-card h3 {
+    font-size: 20px;
+  }
+
+  .hc-raw-steel .hc-rs-cta {
+    padding: 36px 0;
+  }
+
+  .hc-raw-steel .hc-rs-cta-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .hc-raw-steel .hc-rs-cta-text h2 {
+    font-size: 22px;
+  }
+
+  .hc-raw-steel .hc-rs-cta-text p {
+    font-size: 15px;
+    margin: 0 auto;
+  }
+
+  .hc-raw-steel .hc-rs-cta-action {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hc-raw-steel .hc-rs-cta-action .hc-rs-btn-dark {
+    width: 100%;
+    max-width: 320px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hc-raw-steel .hc-rs-container {
+    padding: 0 16px;
+  }
+
+  .hc-raw-steel .hc-rs-hero-content {
+    padding: 40px 0 32px;
+  }
+
+  .hc-raw-steel .hc-rs-hero-content h1 {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  .hc-raw-steel .hc-rs-tagline {
+    font-size: 15px;
+  }
+
+  .hc-raw-steel .hc-rs-lead {
+    font-size: 14px;
+  }
+
+  .hc-raw-steel .hc-rs-products span {
+    font-size: 10px;
+    padding: 6px 9px;
+  }
+
+  .hc-raw-steel .hc-rs-products-section,
+  .hc-raw-steel .hc-rs-order {
+    padding: 40px 0;
+  }
+
+  .hc-raw-steel .hc-rs-section-header h2 {
+    font-size: 22px;
+  }
+
+  .hc-raw-steel .hc-rs-form-card {
+    padding: 20px 14px;
+  }
+
+  .hc-raw-steel .hc-rs-phone-text a {
+    font-size: 20px;
+  }
+
+  .hc-raw-steel .hc-rs-cta-text h2 {
+    font-size: 20px;
+  }
+
+  .hc-raw-steel .hc-rs-btn-primary {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  .hc-raw-steel .hc-rs-hero {
+    min-height: 0;
+  }
+
+  .hc-raw-steel .hc-rs-hero-content {
+    padding: 28px 0;
+  }
+
+  .hc-raw-steel .hc-rs-hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hc-raw-steel .hc-rs-products {
+    margin: 10px 0 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hc-raw-steel *,
+  .hc-raw-steel *::before,
+  .hc-raw-steel *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .hc-raw-steel .hc-rs-card:hover {
+    transform: none;
+  }
+
+  .hc-raw-steel .hc-rs-card:hover .hc-rs-card-image img {
+    transform: none;
+  }
+}
