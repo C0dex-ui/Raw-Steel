@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/raw-steel", "destination": "/index.html" },
+    { "source": "/raw-steel/", "destination": "/index.html" }
+  ]
+}

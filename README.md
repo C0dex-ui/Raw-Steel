@@ -1,35 +1,36 @@
-﻿# Hercules Raw Steel Page
+# Hercules Raw Steel Page
 
-Elementor-ready full-width page content for `/raw-steel/` on [corrugated-industries.com](https://corrugated-industries.com/).
+Static / Elementor-ready page for Hercules raw steel (`/raw-steel/`).
 
-## Files
+## Deploy on Vercel
 
-| File | Purpose |
-|------|---------|
-| `raw-steel.html` | Page markup (preview + base for edits) |
-| `raw-steel.css` | Scoped styles under `.hc-raw-steel` |
-| `raw-steel-paste.html` | **Paste this into Elementor** (CSS inlined) |
-| `img/rawl-steel/` | Hero graphic + product photos |
+1. Import this GitHub repo in Vercel: https://github.com/C0dex-ui/Raw-Steel
+2. Framework Preset: **Other** (static)
+3. Build Command: leave **empty**
+4. Output Directory: leave **empty** (or `.`)
+5. Deploy
+
+Root URL (`/`) serves `index.html`. `/raw-steel` also works.
 
 ## Local preview
 
 ```bash
 npx serve -l 3000 .
-# open http://127.0.0.1:3000/raw-steel.html
+# http://127.0.0.1:3000/
+# http://127.0.0.1:3000/raw-steel.html
 ```
 
-## Elementor setup
+## Files
 
-1. Page Settings → **Page Layout: Elementor Full Width**
-2. Hide Title = Yes
-3. One section: Full Width, Stretch Section On, padding 0, no gap
-4. Column: 100% width, padding 0
-5. HTML widget → paste entire contents of `raw-steel-paste.html`
-6. Upload images from `img/rawl-steel/` to Media Library and update image paths to full WP URLs
+| File | Purpose |
+|------|---------|
+| `index.html` | **Vercel / static hosting** entry (full HTML document) |
+| `raw-steel.html` | Elementor fragment (no html/body wrapper) |
+| `raw-steel.css` | Scoped styles under `.hc-raw-steel` |
+| `raw-steel-paste.html` | One-file Elementor paste (CSS inlined) |
+| `img/rawl-steel/` | Hero + product images |
+| `vercel.json` | Routes for `/raw-steel` |
 
-## Products
+## Elementor (WordPress)
 
-- I-Beams
-- Angle Iron
-- Flat Bar
-- Flat Plate
+Use `raw-steel-paste.html` in an HTML widget with Page Layout = Elementor Full Width.
