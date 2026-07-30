@@ -11,10 +11,11 @@
   3. Add ONE section -> Layout: Full Width, Content Width: Full Width
      Stretch Section: Yes / Columns Gap: No Gap / padding 0 all sides
   4. Column: Content Width 100%, padding 0
-  5. Add HTML widget (or Code widget) -> paste this ENTIRE file
-     (CSS is already inlined below).
+  5. Add HTML widget (or Code widget) -> paste this entire block
+  6. Also paste/link raw-steel.css (Custom CSS, HTML style, or enqueue)
+     Prefer raw-steel-paste.html for a single all-in-one paste.
 
-  Images: upload photos to Media Library, then replace img/rawl-steel/... paths.
+  Styles: raw-steel.css  OR  use raw-steel-paste.html (CSS inlined).
 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -305,15 +306,24 @@ body:has(.hc-raw-steel) .elementor {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: stretch;
+  min-height: 100%;
 }
 
+/* Full portrait marketing graphic (2:3 asset) */
 .hc-raw-steel .hc-rs-hero-graphic img {
+  display: block;
   width: 100%;
-  max-width: 480px;
+  max-width: 440px;
   height: auto;
-  border-radius: 8px;
+  max-height: min(720px, 78vh);
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 10px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
   border: 3px solid rgba(255, 255, 255, 0.12);
+  background: #000;
 }
 
 .hc-raw-steel .hc-rs-eyebrow {
@@ -837,7 +847,8 @@ body:has(.hc-raw-steel) .elementor {
   }
 
   .hc-raw-steel .hc-rs-hero-graphic img {
-    max-width: 360px;
+    max-width: 380px;
+    max-height: min(560px, 70vh);
   }
 
   .hc-raw-steel .hc-rs-hero-content {
@@ -881,7 +892,8 @@ body:has(.hc-raw-steel) .elementor {
   }
 
   .hc-raw-steel .hc-rs-hero-graphic img {
-    max-width: 300px;
+    max-width: 320px;
+    max-height: min(480px, 62vh);
   }
 
   .hc-raw-steel .hc-rs-eyebrow {
@@ -1144,10 +1156,10 @@ body:has(.hc-raw-steel) .elementor {
         </div>
         <div class="hc-rs-hero-graphic">
           <img
-            src="img/rawl-steel/hero-graphic.png"
+            src="img/rawl-steel/hero-graphic-portrait.png"
             alt="Hercules Raw Steel &mdash; I-Beams, Angle Iron, Flat Bar, Flat Plate. Quality steel. Reliable supply. Solid solutions."
-            width="1254"
-            height="1254"
+            width="900"
+            height="1350"
             loading="eager"
           >
         </div>
